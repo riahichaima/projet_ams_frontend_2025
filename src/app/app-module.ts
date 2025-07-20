@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Home } from './home/home';
 import { AddIngPipe } from './pipes/add-ing-pipe';
+import { MettrePremierCharEnMajusPipe } from './pipes/mettre-premier-char-en-majus-pipe';
 
 @NgModule({
   declarations: [
     App,
     Home,
-    AddIngPipe
+    AddIngPipe,
+    MettrePremierCharEnMajusPipe
   ],
   imports: [
     BrowserModule,
