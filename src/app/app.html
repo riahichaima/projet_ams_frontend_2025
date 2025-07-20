@@ -1,6 +1,12 @@
 <h1 align="center">Welcome to My AMS</h1>
-{{formation}}
+
+{{ formation }}  
 <br/>
-Nom:{{nom|uppercase}}
+Nom: {{ nom | uppercase }}
 <br/>
-Email:{{email}}
+Email: {{ email }}
+<br/>
+
+<ul>
+  <li *ngFor="let nom of noms"> {{ nom }} </li>
+</ul>

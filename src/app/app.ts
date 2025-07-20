@@ -9,4 +9,5 @@ import { Component, signal } from '@angular/core';
 export class App {
 formation:string="Fullstack formation springboot angular et devops"
 nom:string="chaima"
-email:string="chaymariahi14@gmail.com"}
+email:string="chaymariahi14@gmail.com"
+noms:string[] = (["chaima", "mohamed", "salah", "yassine"]);}
