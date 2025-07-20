@@ -1,21 +1,60 @@
 <h1 align="center">Welcome to My AMS</h1>
 
-{{ formation }}  
-<br/>
-<span class="c2">Nom: {{ nom | uppercase }}</span>
-<br/>
-Email: {{ email }}
-<br/>
+<!-- Logo image -->
+<img [src]="logo" alt="Logo" />
 
+<!-- Affichage des données -->
+<p>{{ formation }}</p>
+
+<br />
+
+<span class="c2">Nom: {{ nom | uppercase }}</span>
+<br />
+<span>Email: {{ email }}</span>
+<br />
+
+<!-- Liste des noms avec deux pipes personnalisés -->
 <ul>
-  <li class="c1" *ngFor="let nom of noms"> {{ nom|mettrePremierCharEnMajus|addIng}} </li>
+  <li class="c1" *ngFor="let nom of noms">
+    {{ nom | mettrePremierCharEnMajus | addIng }}
+  </li>
 </ul>
+
+<!-- Boîte personnalisée -->
 <div class="custom-box" style="margin-bottom: 1%;">
   Ce texte est stylisé avec une classe CSS maison 💚
 </div>
-<br/>
-Ceci est un bouton bootstrap Primary: <button style="margin-bottom: 1%;" type="button" class="btn btn-primary">Primary</button>
-<br/>
-Ceci est un bouton bootstrap Success: <button style="margin-bottom: 1%;" type="button" class="btn btn-success" (click)="displaySuccess()">Success</button>
-<br/>
-Ceci est un bouton bootstrap Success: <button style="margin-bottom: 1%;" type="button" class="btn btn-danger" (click)="displayDanger()">Danger</button>
+
+<!-- Boutons Bootstrap -->
+<br />
+<p>Ceci est un bouton Bootstrap Primary:</p>
+<button
+  style="margin-bottom: 1%;"
+  type="button"
+  class="btn btn-primary"
+  (click)="displayPrimery()"
+>
+  Primary
+</button>
+
+<br />
+<p>Ceci est un bouton Bootstrap Success:</p>
+<button
+  style="margin-bottom: 1%;"
+  type="button"
+  class="btn btn-success"
+  (click)="displaySuccess()"
+>
+  Success
+</button>
+
+<br />
+<p>Ceci est un bouton Bootstrap Danger:</p>
+<button
+  style="margin-bottom: 1%;"
+  type="button"
+  class="btn btn-danger"
+  (click)="displayDanger()"
+>
+  Danger
+</button>
