@@ -10,4 +10,14 @@ export class App {
 formation:string="Fullstack formation springboot angular et devops"
 nom:string="chaima"
 email:string="chaymariahi14@gmail.com"
-noms:string[] = (["chaima", "mohamed", "salah", "yassine"]);}
+noms:string[] = (["chaima", "mohamed", "salah", "yassine"]);
+ displaySuccess()
+  {
+    alert("Tu as cliquer sur btn success")
+  }
+
+   displayDanger()
+  {
+    alert("Tu as cliquer sur btn danger")
+  }
+}

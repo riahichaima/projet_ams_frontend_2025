@@ -2,11 +2,20 @@
 
 {{ formation }}  
 <br/>
-Nom: {{ nom | uppercase }}
+<span class="c2">Nom: {{ nom | uppercase }}</span>
 <br/>
 Email: {{ email }}
 <br/>
 
 <ul>
-  <li *ngFor="let nom of noms"> {{ nom|mettrePremierCharEnMajus|addIng}} </li>
+  <li class="c1" *ngFor="let nom of noms"> {{ nom|mettrePremierCharEnMajus|addIng}} </li>
 </ul>
+<div class="custom-box" style="margin-bottom: 1%;">
+  Ce texte est stylisé avec une classe CSS maison 💚
+</div>
+<br/>
+Ceci est un bouton bootstrap Primary: <button style="margin-bottom: 1%;" type="button" class="btn btn-primary">Primary</button>
+<br/>
+Ceci est un bouton bootstrap Success: <button style="margin-bottom: 1%;" type="button" class="btn btn-success" (click)="displaySuccess()">Success</button>
+<br/>
+Ceci est un bouton bootstrap Success: <button style="margin-bottom: 1%;" type="button" class="btn btn-danger" (click)="displayDanger()">Danger</button>
