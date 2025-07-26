@@ -1,0 +1,37 @@
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.provider-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #fafafa;
+  border: 3px solid black; /* ligne extérieure épaisse */
+}
+
+.provider-table th,
+.provider-table td {
+  border: 2px solid black; /* lignes intérieures épaisses et noires */
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.provider-table th {
+  background-color: whitesmoke;
+  color: black;
+  text-transform: uppercase;
+}
+
+.provider-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.provider-table tr:hover {
+  background-color: #ddd;
+}
