@@ -11,11 +11,11 @@ import { ProviderService } from '../services/provider-service';
   styleUrls: ['./home.css'] // corrigé ici
 })
 export class Home implements OnInit {
-  providers: Provider[] = [
+  /*providers: Provider[] = [
     { id: 1, name: 'Samsung', address: 'Korea', email: 'samsung@gmail.com' },
     { id: 2, name: 'Apple', address: 'USA', email: 'apple@gmail.com' },
     { id: 3, name: 'Xiaomi', address: 'China', email: 'xiaomi@gmail.com' }
-  ];
+  ];*/
 
    listUsers= new BehaviorSubject<any | null>(null);;
    
