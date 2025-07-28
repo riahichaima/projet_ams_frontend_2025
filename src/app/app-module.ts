@@ -7,13 +7,15 @@ import { Home } from './home/home';
 import { AddIngPipe } from './pipes/add-ing-pipe';
 import { MettrePremierCharEnMajusPipe } from './pipes/mettre-premier-char-en-majus-pipe';
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
+import { ListeProviders } from './liste-providers/liste-providers';
 
 @NgModule({
   declarations: [
     App,
     Home,
     AddIngPipe,
-    MettrePremierCharEnMajusPipe
+    MettrePremierCharEnMajusPipe,
+    ListeProviders
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 <p class="title">Home works!</p>
 
 <!-- Tableau des fournisseurs -->
-<table class="provider-table">
+<h3 align="center">Liste des Fournisseurs</h3>
+<table class="styled-table">
   <thead>
     <tr>
       <th>ID</th>
@@ -23,7 +24,7 @@
 <!-- Tableau des utilisateurs -->
 <h3 align="center">Liste des Utilisateurs</h3>
 <ng-container *ngIf="listUsers | async as users">
-  <table class="user-table" *ngIf="users.length > 0; else noUsers">
+  <table class="styled-table" *ngIf="users.length > 0; else noUsers">
     <thead>
       <tr>
         <th>ID</th>

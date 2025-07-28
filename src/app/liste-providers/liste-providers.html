@@ -1,0 +1,26 @@
+<h3 align="center">Liste des Providers</h3>
+
+<ng-container *ngIf="listProviders | async as providers">
+  <table class="styled-table" *ngIf="providers.length > 0; else noProviders">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provider of providers">
+        <td>{{ provider.id }}</td>
+        <td>{{ provider.name }}</td>
+        <td>{{ provider.address }}</td>
+        <td>{{ provider.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #noProviders>
+  <p class="no-providers">Aucun provider trouvé.</p>
+</ng-template>

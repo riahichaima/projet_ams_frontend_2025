@@ -3,6 +3,7 @@ import { Article } from '../models';
 import { Provider } from '../models';
 import { Users } from '../services/users'; 
 import { BehaviorSubject } from 'rxjs';
+import { ProviderService } from '../services/provider-service'; 
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -17,6 +18,7 @@ export class Home implements OnInit {
   ];
 
    listUsers= new BehaviorSubject<any | null>(null);;
+   
 
   constructor(private userService:Users){ // injection de la dépendance:le service Users
    //console.log("constructor...")
@@ -35,3 +37,5 @@ export class Home implements OnInit {
       }
     });
   }}
+
+  
