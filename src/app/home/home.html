@@ -1,5 +1,6 @@
 <p class="title">Home works!</p>
 
+<!-- Tableau des fournisseurs -->
 <table class="provider-table">
   <thead>
     <tr>
@@ -18,3 +19,34 @@
     </tr>
   </tbody>
 </table>
+
+<!-- Tableau des utilisateurs -->
+<h3 align="center">Liste des Utilisateurs</h3>
+<ng-container *ngIf="listUsers | async as users">
+  <table class="user-table" *ngIf="users.length > 0; else noUsers">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Rue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address.street }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #noUsers>
+  <p class="no-users">Aucun utilisateur trouvé.</p>
+</ng-template>

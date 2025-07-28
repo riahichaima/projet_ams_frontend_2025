@@ -6,6 +6,7 @@ import { App } from './app';
 import { Home } from './home/home';
 import { AddIngPipe } from './pipes/add-ing-pipe';
 import { MettrePremierCharEnMajusPipe } from './pipes/mettre-premier-char-en-majus-pipe';
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MettrePremierCharEnMajusPipe } from './pipes/mettre-premier-char-en-maj
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection()
+    provideZonelessChangeDetection(),
+    provideHttpClient(withFetch(), withInterceptorsFromDi())
   ],
   bootstrap: [App]
 })

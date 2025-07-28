@@ -35,3 +35,33 @@
 .provider-table tr:hover {
   background-color: #ddd;
 }
+.user-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #fafafa;
+  border: 3px solid black;
+}
+
+.user-table th,
+.user-table td {
+  border: 2px solid black;
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.user-table th {
+  background-color: whitesmoke;
+  color: black;
+  text-transform: uppercase;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.user-table tr:hover {
+  background-color: #ddd;
+}
+
