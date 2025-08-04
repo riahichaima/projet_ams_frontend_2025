@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-dark text-white">
+      <h4 class="mb-0">Add New Provider</h4>
+    </div>
+    <div class="card-body">
+      <form (submit)="saveProvider(provider.value)" #provider="ngForm" >
+        
+        <div class="mb-3">
+          <label for="providerName" class="form-label fw-semibold">Provider Name</label>
+          <input  type="text" name="name" ngModel class="form-control" id="providerName" placeholder="Enter provider name" />
+          
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label fw-semibold">Email</label>
+          <input type="email"name="email" ngModel class="form-control" id="email" placeholder="Enter email" />
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label fw-semibold">Address</label>
+          <textarea name="address" ngModel class="form-control" id="address" rows="3" placeholder="Enter address"></textarea>
+        </div>
+
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary px-4">Submit</button>
+          <button type="reset" class="btn btn-secondary px-4 ms-2">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

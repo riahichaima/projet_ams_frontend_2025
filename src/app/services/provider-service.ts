@@ -10,4 +10,7 @@ export class ProviderService {  constructor(private http: HttpClient) { }
   getProviders() {
     return this.http.get("http://localhost:8089/providers");
   }
+  addProvider(provider: any) {
+    return this.http.post("http://localhost:8089/providers", provider);
+  }
 }

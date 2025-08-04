@@ -9,6 +9,8 @@ import { MettrePremierCharEnMajusPipe } from './pipes/mettre-premier-char-en-maj
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { ListeProviders } from './liste-providers/liste-providers';
 import { NavBar } from './nav-bar/nav-bar';
+import { AddProvider } from './add-provider/add-provider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { NavBar } from './nav-bar/nav-bar';
     AddIngPipe,
     MettrePremierCharEnMajusPipe,
     ListeProviders,
-    NavBar
+    NavBar,
+    AddProvider
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
