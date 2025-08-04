@@ -1,26 +1,38 @@
-<h3 align="center">Liste des Providers</h3>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Adresse</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let provider of listProviders | async">
+      <!-- Si en mode édition -->
+      <ng-container *ngIf="editedProvider?.id === provider.id; else normalRow">
+        <td><input [(ngModel)]="editedProvider.id" /></td>
+        <td><input [(ngModel)]="editedProvider.name" /></td>
+        <td><input [(ngModel)]="editedProvider.address" /></td>
+        <td><input [(ngModel)]="editedProvider.email" /></td>
+        <td>
+          <button (click)="confirmUpdate()">✅</button>
+          <button (click)="cancelUpdate()">❌</button>
+        </td>
+      </ng-container>
 
-<ng-container *ngIf="listProviders | async as providers">
-  <table class="styled-table" *ngIf="providers.length > 0; else noProviders">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let provider of providers">
+      <!-- Affichage normal -->
+      <ng-template #normalRow>
         <td>{{ provider.id }}</td>
         <td>{{ provider.name }}</td>
         <td>{{ provider.address }}</td>
         <td>{{ provider.email }}</td>
-      </tr>
-    </tbody>
-  </table>
-</ng-container>
-
-<ng-template #noProviders>
-  <p class="no-providers">Aucun provider trouvé.</p>
-</ng-template>
+        <td>
+          <button (click)="startUpdate(provider)">✏️</button>
+          <button (click)="deleteProvider(provider.id)">🗑️</button>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>

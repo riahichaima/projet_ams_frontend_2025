@@ -18,14 +18,14 @@ import { FormsModule } from '@angular/forms';
     Home,
     AddIngPipe,
     MettrePremierCharEnMajusPipe,
-    ListeProviders,
     NavBar,
     AddProvider
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ListeProviders
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
