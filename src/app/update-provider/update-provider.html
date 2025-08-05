@@ -1,0 +1,38 @@
+<h2 class="text-center my-4">🛠️ Mise à jour d'un Provider</h2>
+
+<div class="container d-flex justify-content-center">
+  <div class="card p-4 shadow w-75">
+    <ng-container *ngIf="provider">
+      <form>
+        <!-- ID (non modifiable) -->
+        <div class="form-group mb-3">
+          <label for="idProvider">ID</label>
+          <input type="number" class="form-control" [(ngModel)]="idProvider" id="idProvider" name="idProvider" disabled>
+        </div>
+
+        <!-- Nom -->
+        <div class="form-group mb-3">
+          <label for="providerName">Nom du Provider</label>
+          <input type="text" [(ngModel)]="providerName" name="providerName" class="form-control" id="providerName" placeholder="Entrez le nom">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group mb-3">
+          <label for="providerEmail">Email</label>
+          <input type="email" [(ngModel)]="providerEmail" name="providerEmail" class="form-control" id="providerEmail" placeholder="exemple@email.com">
+        </div>
+
+        <!-- Adresse -->
+        <div class="form-group mb-4">
+          <label for="providerAddress">Adresse</label>
+          <input type="text" [(ngModel)]="providerAddress" name="providerAddress" class="form-control" id="providerAddress" placeholder="Ex: Tunis, Centre Ville">
+        </div>
+
+        <!-- Bouton de mise à jour -->
+        <div class="text-end">
+          <button type="button" class="btn btn-success" (click)="updateProvider()">✔️ Mettre à jour</button>
+        </div>
+      </form>
+    </ng-container>
+  </div>
+</div>

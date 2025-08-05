@@ -11,6 +11,9 @@ export class ProviderService {
   getProviders(): Observable<any[]> {
     return this.http.get<any[]>("http://localhost:8089/providers");
   }
+ getProvidersById(id: number): Observable<any> {
+  return this.http.get<any>(`http://localhost:8089/providers/${id}`);
+}
 
   addProvider(provider: any) {
     return this.http.post("http://localhost:8089/providers", provider);

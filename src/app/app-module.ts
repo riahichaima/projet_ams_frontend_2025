@@ -11,6 +11,7 @@ import { ListeProviders } from './liste-providers/liste-providers';
 import { NavBar } from './nav-bar/nav-bar';
 import { AddProvider } from './add-provider/add-provider';
 import { FormsModule } from '@angular/forms';
+import { UpdateProvider } from './update-provider/update-provider';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AddIngPipe,
     MettrePremierCharEnMajusPipe,
     NavBar,
-    AddProvider
+    AddProvider,
+    UpdateProvider
   ],
   imports: [
     BrowserModule,

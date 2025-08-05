@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ProviderService } from '../services/provider-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // pour ngModel
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-providers',
@@ -15,7 +16,7 @@ export class ListeProviders implements OnInit {
   listProviders = new BehaviorSubject<any[]>([]);
   editedProvider: any = null;  // provider en cours d'édition
 
-  constructor(private providerService: ProviderService) {}
+  constructor(private providerService: ProviderService , private router:Router) {}
 
   ngOnInit(): void {
     this.loadProviders();
@@ -46,25 +47,9 @@ export class ListeProviders implements OnInit {
     }
   }
 
-  startUpdate(provider: any) {
-    // on clone l'objet pour éditer sans modifier directement la liste
-    this.editedProvider = { ...provider };
-  }
-
-  cancelUpdate() {
-    this.editedProvider = null;
-  }
-
-  confirmUpdate() {
-    this.providerService.updateProvider( this.editedProvider).subscribe({
-      next: () => {
-        alert("Provider mis à jour !");
-        this.editedProvider = null;
-        this.loadProviders();
-      },
-      error: (err) => {
-        console.error("Erreur lors de la mise à jour", err);
-      }
-    });
+  updateProvider(id: any) {
+    this.router.navigate(['/updateProvider',  id]);
+   
   }
 }
+//وَقَالَ ٱلۡمَلِكُ ٱئۡتُونِي بِهِۦٓ أَسۡتَخۡلِصۡهُ لِنَفۡسِيۖ فَلَمَّا كَلَّمَهُۥ قَالَ إِنَّكَ ٱلۡيَوۡمَ لَدَيۡنَا مَكِينٌ أَمِينٞ
